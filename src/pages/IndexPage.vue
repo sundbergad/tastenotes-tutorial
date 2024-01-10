@@ -1,23 +1,38 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
+  <q-page class="row">
+  <q-card class="col-xs-9">
+    <q-toolbar>
+      <q-input class="full-width" 
+        borderless 
+        :model-value="search"
+        placeholder="Search"
+        dense>
+        <template #append> 
+          <q-icon name="mdi-magnify" />
+        </template>        
+      </q-input>
+    </q-toolbar>
+    <q-list bordered>
+      <q-item>
+        <q-item-section side>
+          <q-checkbox :model-value="true"></q-checkbox>
+        </q-item-section>
+        <q-item-section>Go shopping</q-item-section>
+        <q-item-section side>
+          <q-btn flat round icon="mdi-delete" size="small">
+        </q-btn></q-item-section>
+      </q-item>
+    </q-list>
+  </q-card>
   </q-page>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { Todo, Meta } from 'components/models'
-import ExampleComponent from 'components/ExampleComponent.vue'
 import { defineComponent, ref } from 'vue'
 
-export default defineComponent({
-  name: 'IndexPage',
-  components: { ExampleComponent },
-  setup () {
+const search = "";
+    const selected = ref(0)
     const todos = ref<Todo[]>([
       {
         id: 1,
@@ -40,10 +55,11 @@ export default defineComponent({
         content: 'ct5'
       }
     ])
+
     const meta = ref<Meta>({
       totalCount: 1200
     })
-    return { todos, meta }
-  }
-})
+    
+  
+
 </script>

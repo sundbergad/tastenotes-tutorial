@@ -1,12 +1,13 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+  <!-- remove elevated to remove shaddow on toolbar -->
+    <q-header>
       <q-toolbar>
         <q-btn
           flat
           dense
           round
-          icon="menu"
+          icon="mdi-menu"
           aria-label="Menu"
           @click="toggleLeftDrawer"
         />
