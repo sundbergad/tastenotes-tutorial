@@ -1,5 +1,6 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <!-- replace lHh with hHh to handle side drawer apperance -->
+  <q-layout view="hHh Lpr lFf">
   <!-- remove elevated to remove shaddow on toolbar -->
     <q-header>
       <q-toolbar>
@@ -16,7 +17,7 @@
           Quasar App
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <q-btn flat round icon="mdi-logout"></q-btn>
       </q-toolbar>
     </q-header>
 
@@ -26,17 +27,33 @@
       bordered
     >
       <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
+        <q-toolbar class="bg-primary" />
 
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
+        <q-item class="bg-grey-3">
+          <q-item-section>
+          List
+          </q-item-section>
+          <q-item-section side>
+            <q-btn icon="mdi-plus" flat round size="sm"></q-btn>
+
+          </q-item-section>
+          
+        </q-item>
+        <q-item clickable>
+          <q-item-section>
+            <q-icon name="mdi-shopping"></q-icon>
+          </q-item-section>
+          <q-item-section>
+            Shopppinglist
+            
+          </q-item-section>
+          <q-item-section side>
+            12
+            
+          </q-item-section>
+        </q-item>
+
+
       </q-list>
     </q-drawer>
 
@@ -46,72 +63,14 @@
   </q-layout>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue'
-import EssentialLink from 'components/EssentialLink.vue'
+<script setup>
+  import {ref} from 'vue'
+  const leftDrawerOpen = ref(false)
 
-const linksList = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-]
-
-export default defineComponent({
-  name: 'MainLayout',
-
-  components: {
-    EssentialLink
-  },
-
-  setup () {
-    const leftDrawerOpen = ref(false)
-
-    return {
-      essentialLinks: linksList,
-      leftDrawerOpen,
-      toggleLeftDrawer () {
+  function toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
       }
-    }
-  }
-})
+    
+  
+
 </script>
