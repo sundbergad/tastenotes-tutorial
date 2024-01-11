@@ -4,7 +4,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/',
     // component: () => import('layouts/MainLayout.vue'),
-    component: () => import('layouts/BlankLayout.vue'),
+    component: () => import('layouts/MainLayout.vue'),
     children: [{ 
       path: '', 
       component: () => import('pages/IndexPage.vue') },{ 
@@ -14,6 +14,7 @@ const routes: RouteRecordRaw[] = [
   },{
     // /auth/login
     path: '/auth',
+    // use own blank layout around login
     // component: () => import('layouts/MainLayout.vue'),
     component: () => import('layouts/BlankLayout.vue'),
     children: [{       
