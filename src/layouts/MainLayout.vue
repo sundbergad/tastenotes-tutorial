@@ -39,7 +39,7 @@
           </q-item-section>
           
         </q-item>
-        <q-item clickable>
+        <q-item clickable class="text-grey-9">
           <q-item-section>
             <q-icon name="mdi-shopping"></q-icon>
           </q-item-section>

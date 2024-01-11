@@ -41,37 +41,53 @@
 
 <script setup lang="ts">
 import { Todo, Meta } from 'components/models'
-import { defineComponent, ref } from 'vue'
+import { ref, onMounted } from 'vue'
+
+// tool in quasar to pick out color hex
+// first import colors lib
+import {colors} from 'quasar'
+// then pick out the utility function to get color hex
+const {getPaletteColor} = colors;
+
+onMounted(() => {
+  console.log("getPaletteColor :", getPaletteColor('blue-9'));
+  
+})
 
 const search = "";
-    const selected = ref(0)
-    const todos = ref<Todo[]>([
-      {
-        id: 1,
-        content: 'ct1'
-      },
-      {
-        id: 2,
-        content: 'ct2'
-      },
-      {
-        id: 3,
-        content: 'ct3'
-      },
-      {
-        id: 4,
-        content: 'ct4'
-      },
-      {
-        id: 5,
-        content: 'ct5'
-      }
-    ])
+const selected = ref(0)
+const todos = ref<Todo[]>([
+  {
+    id: 1,
+    content: 'ct1'
+  },
+  {
+    id: 2,
+    content: 'ct2'
+  },
+  {
+    id: 3,
+    content: 'ct3'
+  },
+  {
+    id: 4,
+    content: 'ct4'
+  },
+  {
+    id: 5,
+    content: 'ct5'
+  }
+])
 
-    const meta = ref<Meta>({
-      totalCount: 1200
-    })
+const meta = ref<Meta>({
+  totalCount: 1200
+})
     
   
 
 </script>
+
+// fetch info from scss file in css folder
+<style lang="scss">
+  
+</style>
