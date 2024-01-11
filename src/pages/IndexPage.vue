@@ -45,14 +45,14 @@ import { ref, onMounted } from 'vue'
 
 // tool in quasar to pick out color hex
 // first import colors lib
-import {colors} from 'quasar'
+// import {colors} from 'quasar'
 // then pick out the utility function to get color hex
-const {getPaletteColor} = colors;
+// const {getPaletteColor} = colors;
 
-onMounted(() => {
-  console.log("getPaletteColor :", getPaletteColor('blue-9'));
+// onMounted(() => {
+//   console.log("getPaletteColor :", getPaletteColor('blue-9'));
   
-})
+// })
 
 const search = "";
 const selected = ref(0)
@@ -87,7 +87,3 @@ const meta = ref<Meta>({
 
 </script>
 
-// fetch info from scss file in css folder
-<style lang="scss">
-  
-</style>
