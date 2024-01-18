@@ -15,7 +15,9 @@ import iconSet from 'quasar/icon-set/mdi-v5'
 
 
 
+import {Dialog,Notify,LocalStorage,Loading,SessionStorage} from 'quasar'
 
 
-export default { config: {},iconSet }
+
+export default { config: {},iconSet,plugins: {Dialog,Notify,LocalStorage,Loading,SessionStorage} }
 

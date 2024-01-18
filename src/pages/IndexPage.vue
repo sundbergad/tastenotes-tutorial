@@ -12,27 +12,12 @@
         </template>        
       </q-input>
     </q-toolbar>
-    <q-list bordered>
-      <q-item>
-        <q-item-section side>
-          <q-checkbox :model-value="true"></q-checkbox>
-        </q-item-section>
-        <q-item-section>Go shopping</q-item-section>
-        <q-item-section side>
-          <q-btn flat round icon="mdi-delete" size="small">
-        </q-btn></q-item-section>
-      </q-item>
-    </q-list>
+    <TodosList />
   </q-card>
   
   <div  class="col-xs-3">
     <q-toolbar class="bg-primary">
-      <q-btn fab style="margin-bottom: -42px" 
-        color="secondary" 
-        icon="mdi-plus"
-        class="q-mx-lg"
-
-      ></q-btn>
+    <CreateTodoButton></CreateTodoButton>
     </q-toolbar>
   </div>
   
@@ -42,7 +27,8 @@
 <script setup lang="ts">
 import { Todo, Meta } from 'components/models'
 import { ref, onMounted } from 'vue'
-
+import CreateTodoButton from 'components/CreateTodoButton.vue'
+import TodosList from 'components/TodosList.vue'
 // tool in quasar to pick out color hex
 // first import colors lib
 // import {colors} from 'quasar'

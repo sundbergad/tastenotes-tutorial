@@ -21,6 +21,16 @@ const routes: RouteRecordRaw[] = [
       path: 'login', 
       component: () => import('pages/LoginPage.vue') },
   ]
+  },{
+    // /auth/login
+    path: '/create',
+    // use own blank layout around login
+    // component: () => import('layouts/MainLayout.vue'),
+    component: () => import('layouts/BlankLayout.vue'),
+    children: [{       
+      path: 'todo', 
+      component: () => import('pages/CreateTodoForm.vue') },
+  ]
   },
 
 

@@ -17,7 +17,7 @@
           Quasar App
         </q-toolbar-title>
 
-        <q-btn flat round icon="mdi-logout"></q-btn>
+        <q-btn @click="loginTo" flat round icon="mdi-logout"></q-btn>
       </q-toolbar>
     </q-header>
 
@@ -68,9 +68,7 @@
   const leftDrawerOpen = ref(false)
 
   function toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      }
-    
-  
+    leftDrawerOpen.value = !leftDrawerOpen.value
+  }
 
 </script>
