@@ -1,7 +1,7 @@
 <script setup>
 import {ref} from 'vue'
 import { useQuasar } from 'quasar'
-import login from 'src/firebase/firebase-login'
+
 
 
 const $q = useQuasar()

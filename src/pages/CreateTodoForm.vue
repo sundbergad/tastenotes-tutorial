@@ -3,7 +3,7 @@
     padding
     class="flex flex-center"
   >
-  <!-- ref = formComponent ger access till hela formuläret -->
+  <!-- 'ref = "formComponent" ' ger access till hela formuläret -->
     <q-form
       :key="key"
       class="column q-pa-md shadow-2"
